@@ -1,14 +1,4 @@
-/****************************************************************************
-*
-*    Copyright (c) 2017 - 2018 by Rockchip Corp.  All rights reserved.
-*
-*    The material in this file is confidential and contains trade secrets
-*    of Rockchip Corporation. This is proprietary information owned by
-*    Rockchip Corporation. No part of this work may be disclosed,
-*    reproduced, copied, transmitted, or used in any way for any purpose,
-*    without the express written permission of Rockchip Corporation.
-*
-*****************************************************************************/
+
 #ifndef YOLOV3_POST_PROCESS_H
 #define YOLOV3_POST_PROCESS_H
 
