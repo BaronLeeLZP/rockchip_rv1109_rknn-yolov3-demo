@@ -1,6 +1,6 @@
 # rockchip_rv1109_rknn-yolov3-demo
 在瑞芯微rockchip的AI芯片rv1109上，利用rknn和opencv库，修改了官方yolov3后处理部分代码Bug，
-交叉编译yolov3-demo示例后可成功上板部署运行。
+Ubuntu18.04系统，瑞芯微交叉编译工具链，yolov3-demo示例后可成功上板部署运行。
 同时，对在瑞芯微rockchip的其他AI芯片上利用NPU rknn部署CNN模型提供参考和借鉴。
 以下为demo工程说明：
 ## libopencv_api
@@ -14,9 +14,9 @@
 ## src
 ### yolov3_post_process.h
 yolov3 rknn模型推断原始结果的后处理函数接口：
-1.int outputs_transform(rknn_output rknn_outputs[], int net_width, int net_height, detection* dets);首要的后处理操作，数据转换
-2.int do_nms_sort(detection *dets, int total, int classes, float thresh);非极大值抑制算法实现，欢迎码友提供更高效代码的实现
-3.int draw_image(cv::Mat img, detection* dets, int total, float thresh);利用opencv绘制检测结果输出图像并保存为out.jpg
+1. int outputs_transform(rknn_output rknn_outputs[], int net_width, int net_height, detection* dets);首要的后处理操作，数据转换。
+2. int do_nms_sort(detection *dets, int total, int classes, float thresh);非极大值抑制算法实现，欢迎码友提供更高效代码的实现。
+3. int draw_image(cv::Mat img, detection* dets, int total, float thresh);利用opencv绘制检测结果输出图像并保存为out.jpg。
 可封装为标准的输入输出接口
 
 ### yolov3_post_process.cpp
@@ -31,11 +31,11 @@ demo主函数代码实现，可了解物体检测时rknn接口函数调用过程
 手里拿有板子的码友应该都有SDK的，对吧。依照文档配置好交叉编译环境。
 
 ## demo使用步骤如下：
-1.工程编译生成test可执行文件；
+1. 工程编译生成test可执行文件；
   命令**make**
-2.工程编译生成libyolo库文件；
+2. 工程编译生成libyolo库文件；
   命令**make arm_lib**
-3.在rv11xx上运行test文件可得yolov3-demo运行结果。
+3. 在rv11xx上运行test文件可得yolov3-demo运行结果。
   将test文件/dog.jpg图像及其依赖库移植到RV1109上，登录嵌入式系统，命令./test,运行demo即可得out.jpg文件输出结果。
 ![result](https://github.com/BaronLeeLZP/rockchip_rv1109_rknn-yolov3-demo/blob/master/out.jpg)
 
