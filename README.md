@@ -37,7 +37,7 @@ demo主函数代码实现，可了解物体检测时rknn接口函数调用过程
   命令**make arm_lib**
 3.在rv11xx上运行test文件可得yolov3-demo运行结果。
   将test文件/dog.jpg图像及其依赖库移植到RV1109上，登录嵌入式系统，命令./test,运行demo即可得out.jpg文件输出结果。
-![result]https://raw.githubusercontent.com/BaronLeeLZP/rockchip_rv1109_rknn-yolov3-demo/master/out.jpg
+![result]https://github.com/BaronLeeLZP/rockchip_rv1109_rknn-yolov3-demo/blob/master/out.jpg
 
 
 如有技术问题欢迎交流！
